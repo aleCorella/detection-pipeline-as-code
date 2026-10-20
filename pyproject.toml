@@ -7,7 +7,13 @@ authors = [
     { name = "aleCorella", email = "alecorellag@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "duckdb>=1.5.6",
+    "faker>=40.43.0",
+    "httpx>=0.28.1",
+    "pydantic>=2.14.1",
+    "pysigma>=2.0.1",
+]
 
 [project.scripts]
 detection-pipeline-as-code = "detection_pipeline_as_code:main"
@@ -15,3 +21,9 @@ detection-pipeline-as-code = "detection_pipeline_as_code:main"
 [build-system]
 requires = ["uv_build>=0.13.3,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+    "ruff>=0.17.1",
+]
